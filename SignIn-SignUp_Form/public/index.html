@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sliding Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="blueBg">
+            <div class="box signin">
+                <h2>Already have an Account?</h2>
+                <button class="signinBtn">Sign In</button>
+            </div>
+
+            <div class="box signup">
+                <h2>Don't have an Account?</h2>
+                <button class="signupBtn">Sign Up</button>
+            </div>
+        </div>
+
+        <div class="formBx">
+            <div class="form signinForm">
+                <form action="/login" method="POST">
+                    <h3>Sign In</h3>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+
+            <div class="form signupForm">
+                <form action="/sign_up" method="POST">
+                    <h3>Sign Up</h3>
+                    <input type="text" placeholder="Username" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="text" placeholder="Phone Number" name="phno" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signinBtn = document.querySelector('.signinBtn');
+        const signupBtn = document.querySelector('.signupBtn');
+        const formBx = document.querySelector('.formBx');
+        const body = document.querySelector('body');
+
+        signupBtn.onclick = function () {
+            formBx.classList.add('active');
+            body.classList.add('active');
+        }
+
+        signinBtn.onclick = function () {
+            formBx.classList.remove('active');
+            body.classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>
